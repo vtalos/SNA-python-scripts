@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load data
-nodes_file = "nodes.csv"
-edges_file = "edges.csv"
+nodes_file = "data/nodes.csv"
+edges_file = "data/edges.csv"
 
 nodes_df = pd.read_csv(nodes_file)
 edges_df = pd.read_csv(edges_file)

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the dataset
-nodes_df = pd.read_csv('nodes.csv')
+nodes_df = pd.read_csv('data/nodes.csv')
 
 # Summary statistics for bridging coefficient and centrality
 print("\nSummary Statistics:")

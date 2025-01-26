@@ -68,7 +68,7 @@ def analyze_by_modularity_class(data, stopwords):
 
 def main():
     # Load the CSV file
-    file_path = 'nodes.csv'
+    file_path = 'data/nodes.csv'
     data = pd.read_csv(file_path)
 
     # Extract the 'Description' column

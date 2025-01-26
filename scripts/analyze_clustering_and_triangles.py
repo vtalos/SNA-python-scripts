@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read the nodes.csv file
-file_path = "nodes.csv"
+file_path = "data/nodes.csv"
 data = pd.read_csv(file_path)
 
 # Calculate average clustering coefficient

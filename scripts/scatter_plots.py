@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV file into a pandas DataFrame
-file_path = 'nodes.csv'
+file_path = 'data/nodes.csv'
 data = pd.read_csv(file_path)
 
 # List of centrality measures to plot
