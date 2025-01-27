@@ -1,9 +1,16 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Load the CSV file into a pandas DataFrame
-file_path = 'data/nodes.csv'
-data = pd.read_csv(file_path)
+# Get the absolute path of the current script
+script_dir = os.path.abspath(os.path.dirname(__file__))
+
+# Move up to the project root and navigate to the data directory
+project_root = os.path.abspath(os.path.join(script_dir, '..'))
+data_path = os.path.join(project_root, 'data', 'nodes.csv')
+
+# Load the CSV files
+data = pd.read_csv(data_path)
 
 # List of centrality measures to plot
 centrality_measures = [
@@ -36,5 +43,5 @@ for measure, label in zip(centrality_measures, centrality_labels):
 
     # Adjust layout and save/show the plot
     plt.tight_layout()
-    plt.savefig(f'scatter_{measure}.png')  # Save each plot as an image
+    plt.savefig(os.path.join(project_root, 'data', f'scatter_{measure}.png'))  # Save each plot as an image
     plt.show()

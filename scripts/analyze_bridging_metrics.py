@@ -1,8 +1,16 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Load the dataset
-nodes_df = pd.read_csv('data/nodes.csv')
+# Get the absolute path of the current script
+script_dir = os.path.abspath(os.path.dirname(__file__))
+
+# Move up to the project root and navigate to the data directory
+project_root = os.path.abspath(os.path.join(script_dir, '..'))
+data_path = os.path.join(project_root, 'data', 'nodes.csv')
+
+# Load the CSV file
+nodes_df = pd.read_csv(data_path)
 
 # Summary statistics for bridging coefficient and centrality
 print("\nSummary Statistics:")

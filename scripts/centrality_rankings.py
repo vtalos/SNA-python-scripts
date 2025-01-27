@@ -1,11 +1,17 @@
+import os
 import pandas as pd
 
-# Load data
-nodes_file = "data/nodes.csv"
-edges_file = "data/edges.csv"
+# Get the absolute path of the current script
+script_dir = os.path.abspath(os.path.dirname(__file__))
 
-nodes_df = pd.read_csv(nodes_file)
-edges_df = pd.read_csv(edges_file)
+# Move up to the project root and navigate to the data directory
+project_root = os.path.abspath(os.path.join(script_dir, '..'))
+nodes_path = os.path.join(project_root, 'data', 'nodes.csv')
+edges_path = os.path.join(project_root, 'data', 'edges.csv')
+
+# Load the CSV files
+nodes_df = pd.read_csv(nodes_path)
+edges_df = pd.read_csv(edges_path)
 
 # Helper function to get top nodes by a metric
 def get_top_nodes(df, column, top_n=30):
