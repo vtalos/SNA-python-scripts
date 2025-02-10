@@ -38,3 +38,9 @@ print(f"- Average Clustering Coefficient: {average_clustering_coefficient}")
 print(f"- Total Number of Triangles: {total_triangles}")
 print(f"- Number of Nodes Exhibiting Triadic Closure: {num_triadic_closure_nodes}")
 print(f"- Percentage of nodes exhibiting triadic closure: {num_triadic_closure_nodes / len(data) * 100:.2f}%")
+
+# Print the top 10 nodes by triangle count
+top_10_nodes = data.nlargest(10, 'triangles')
+print("\nTop 10 Nodes by Triangle Count:")
+for index, row in top_10_nodes.iterrows():
+    print(f"Label: {row['Label']}, Triangles: {row['triangles']}")
